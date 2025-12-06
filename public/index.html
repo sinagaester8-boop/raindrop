@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pempek Order - Raindrop</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Pempek Raindrop — Order Online</h1>
+    <p>Select products, provide delivery info, and choose a payment method.</p>
+  </header>
+
+  <main class="container">
+    <section id="products" class="products">
+      <h2>Menu</h2>
+      <div id="product-list" class="product-list"></div>
+    </section>
+
+    <aside class="cart" id="cart">
+      <h2>Cart</h2>
+      <div id="cart-items" class="cart-items">No items yet.</div>
+      <div class="cart-summary">
+        <div>Subtotal: <span id="subtotal">Rp0</span></div>
+        <div>Discount: <span id="discount">Rp0</span></div>
+        <div class="total">Total: <span id="total">Rp0</span></div>
+      </div>
+
+      <button id="checkout-btn" class="btn primary">Checkout</button>
+    </aside>
+
+    <section id="checkout" class="checkout hidden">
+      <h2>Delivery & Payment</h2>
+      <form id="checkout-form">
+        <label>Delivery time:
+          <input type="datetime-local" id="delivery-time" required />
+        </label>
+
+        <label>Delivery place / address:
+          <input type="text" id="delivery-place" placeholder="Street, city, notes" required />
+        </label>
+
+        <label>Voucher (optional):
+          <input type="text" id="voucher" placeholder="Enter voucher code" />
+          <small>Try code <strong>RAINDROP10</strong> for 10% off</small>
+        </label>
+
+        <fieldset>
+          <legend>Payment method</legend>
+          <label><input type="radio" name="payment" value="dbs" required /> DBS Paylah</label>
+          <label><input type="radio" name="payment" value="grab" /> GrabPay</label>
+          <label><input type="radio" name="payment" value="gpay" /> Google Pay</label>
+        </fieldset>
+
+        <div class="final-summary">
+          <div>Final total: <strong id="final-total">Rp0</strong></div>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" id="back-btn" class="btn">Back</button>
+          <button type="submit" class="btn primary">Place Order</button>
+        </div>
+      </form>
+
+      <div id="order-result" class="order-result hidden"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <small>&copy; Pempek Raindrop</small>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

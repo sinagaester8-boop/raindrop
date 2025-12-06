@@ -1,0 +1,3 @@
+[build]
+  # Publish the `public` directory so Netlify uses the public/ folder
+  publish = "public"
